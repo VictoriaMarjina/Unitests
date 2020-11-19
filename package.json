@@ -1,0 +1,23 @@
+{
+  "name": "homework1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Script.js",
+  "scripts": {
+    "test": "mocha ./src/**/tests/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictoriaMarjina/HomeWork1_Front-end.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictoriaMarjina/HomeWork1_Front-end/issues"
+  },
+  "homepage": "https://github.com/VictoriaMarjina/HomeWork1_Front-end#readme",
+  "dependencies": {
+    "mocha": "^8.2.1",
+    "chai": "^4.2.0"
+  }
+}
