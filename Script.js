@@ -1,6 +1,4 @@
 
-
-
 /*let numb;
 function getDayName(numb){
     let answer;

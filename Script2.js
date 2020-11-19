@@ -11,7 +11,7 @@ function getCountAndSum(){
                     sum = sum + i;
                 }
         }
-
+erddddddddd
     return `Количество четных чисел от 1 до 99 равно: ${count}, а их сумма равна: ${sum}.`;
 }
 console.log(getCountAndSum());*/
@@ -147,6 +147,6 @@ function reversNum(num) {
     }
     return result;
 }
-console.log(reversNum(num));
+console.log(reversNum(num));*/
 
 
