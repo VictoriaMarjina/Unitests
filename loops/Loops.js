@@ -1,14 +1,3 @@
-module.exports = {
-    getCountAndSum,
-    checkNumber,
-    findSqrt,
-    calcFactorial,
-    calcSumGivNum,
-    reversNum,
-};
-
-//1. Найти сумму четных чисел и их количество в диапазоне от 1 до 99
-
 function getCountAndSum(){
     let count = 0;
     let sum = 0;
@@ -22,10 +11,8 @@ function getCountAndSum(){
 
     return `Количество четных чисел от 1 до 99 равно: ${count}, а их сумма равна: ${sum}.`;
 }
-console.log(getCountAndSum());
 
 //2. Проверить простое ли число? (число называется простым, если оно делится только само на себя и на 1)
-let numb;
 function checkNumber(numb){
     let answer;
     if ((!numb)){
@@ -49,10 +36,8 @@ function checkNumber(numb){
 
     return "число является простым";
 }
-console.log(checkNumber(numb));
 
 //3. Найти корень натурального числа с точностью до целого (рассмотреть вариант последовательного подбора и метод бинарного поиска)
-let numb;
 function findSqrt(numb){
     
     let answer;
@@ -68,22 +53,15 @@ function findSqrt(numb){
     }
     /*for(let i = 1; i <= numb / 2; i ++){  //округление к ближнему
         if(i * i === numb){
-
             return i;
-
         }else if (i * i > numb){
           let half = ((i * i) + ((i - 1) * (i - 1))) / 2;
-
         }
         
         if (numb > half){
-
           return i;
-
         }else{
-
             return i - 1;
-
         }
     }*/
     for(let i = 1; i <= numb / 2; i ++){ // округление до целого
@@ -96,9 +74,8 @@ function findSqrt(numb){
         }
     }
 }
-console.log(findSqrt(numb));
+
 //4.
-let num;
 function calcFactorial(num) {
 
     let answer;
@@ -112,23 +89,25 @@ function calcFactorial(num) {
         
         return answer;
     }
-    if(num >= 0){
+    
     let result = 1;
+    
+    if(num >= 0){
+        
         for(let i = 1; i <= num; i++) {
             result *=i ;
         }
-        }else{
+    }else{
             answer = "Введите положительное число";
 
             return answer;
-        }
+    }
 
     return result;
 }
-console.log(calcFactorial(num));
+
 
 //5.
-let num;
 function calcSumGivNum(num) {
     
     if(!num && num !== 0) {
@@ -147,9 +126,8 @@ function calcSumGivNum(num) {
 
     return result;
 }
-console.log(calcSumGivNum(num));
+
 //6.
-let num;
 function reversNum(num) {
     if(!num && num !== 0) {
 
@@ -167,4 +145,12 @@ function reversNum(num) {
     }
     return result;
 }
-console.log(reversNum(num));
+
+module.exports = {
+    getCountAndSum,
+    checkNumber,
+    findSqrt,
+    calcFactorial,
+    calcSumGivNum,
+    reversNum,
+};
