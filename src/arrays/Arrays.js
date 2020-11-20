@@ -1,39 +1,41 @@
-const colection = [6, 5, 8];
+const collection = [0, 5, -1];
 
-function serchMinElement(colection) {//1
-    if(!Array.isArray(colection)) {
-        
+function serchMinElement(collection) {//1
+    if(!Array.isArray(collection)) {
         return "аргумент не являеться массивом";
-
     }
-    let minElement = colection[0];
-    for(let i = 0; i < colection.length; i++) {
-        if(minElement > colection[i]) {
-            minElement = colection[i];
+
+    let minElement = collection[0];
+    for(let i = 0; i < collection.length; i++) {
+        if(minElement > collection[i]) {
+            minElement = collection[i];
         }
     }
 
-    return `минимальный элемент массива ${minElement}`;
+    return minElement;
 }
-console.log(serchMinElement(colection));
-/*
+console.log(serchMinElement(collection));
 
-function serthMaxElement(colection) {//2
-    if(!Array.isArray(colection)) {
+module.exports = {
+    serchMinElement,
+};
+
+function serchMaxElement(collection) {//2
+    if(!Array.isArray(collection)) {
         return "аргумент не являеться массивом";
     }
-    let maxElement = colection[0];
-    for(let i = 0; i < colection.length; i++) {
-        if(maxElement < colection[i]) {
-            maxElement = colection[i];
+    let maxElement = collection[0];
+    for(let i = 0; i < collection.length; i++) {
+        if(maxElement < collection[i]) {
+            maxElement = collection[i];
         }
     }
 
-    return `максимальный элемент массива ${maxElement}`;
+    return maxElement;
 }
-console.log(serthMaxElement(colection));
+console.log(serchMaxElement(collection));
 
-function serthMinIndex(colection) {//3
+/*function serthMinIndex(colection) {//3
     if(!Array.isArray(colection)) {
 
         return "аргумент не являеться массивом";

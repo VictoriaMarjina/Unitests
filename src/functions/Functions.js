@@ -1,7 +1,4 @@
 
-
-
-/*let numb;
 function getDayName(numb){
     let answer;
     if ((!numb)){
@@ -35,15 +32,9 @@ function getDayName(numb){
     }
 
 }
-console.log(getDayName(numb));*/
-
-
-
-/*function getDecimal(numb){
-
+//
+function getDecimal(numb){
     switch(numb){
-        case 1 :
-            return "Десять";
         case 2 :
             return "Двадцать";
         case 3 :
@@ -61,11 +52,11 @@ console.log(getDayName(numb));*/
         case 9 :
             return "Девяносто";
     }
-
 }
 function getUnit(numb){
-
     switch(numb){
+        case 0 :
+            return "Ноль";
         case 1 :
             return "Один";
         case 2 :
@@ -85,10 +76,8 @@ function getUnit(numb){
         case 9 :
             return "Девять";
     }
-
 }
 function getHundreds(numb){
-
     switch(numb){
         case 1 :
             return "Сто";
@@ -109,11 +98,11 @@ function getHundreds(numb){
         case 9 :
             return "Девятьсот";
     }
-
 }
 function getDecimal2(numb){
-
     switch(numb){
+        case 10 :
+            return "Десять";
         case 11 :
             return "Одиннадцать";
         case 12 :
@@ -133,23 +122,18 @@ function getDecimal2(numb){
         case 19 :
             return "Девятнадцать";
     }
-
 }
 
-let numb;
 function getNumberName(numb){
     let answer;
-    if ((!numb)){
-        answer = "Данные не были введены либо был введен ноль";
-
+    if ((!numb && numb !== 0)){
+        answer = "Данные не были введены";
         return answer;
     } 
     if(typeof numb !== "number"){
         answer = "Данные не соответствуют условию задачи";
-
         return answer;
     }
-
     let numb_string_format = String(numb);
     //console.log(numb_string_format);
     let how_long = numb_string_format.length;
@@ -159,7 +143,6 @@ function getNumberName(numb){
     switch(how_long){
         case 1 :
             result = getUnit(numb);
-
             return result;
         case 2 :
             if(+numb_string_format[0]!== 1){
@@ -167,21 +150,16 @@ function getNumberName(numb){
             }else{
                result = getDecimal(+numb_string_format[0]) + " " + getUnit(+numb_string_format[1]); 
             }
-
             return result;
         case 3 :
             result = getHundreds(+numb_string_format[0]) + " " + getDecimal(+numb_string_format[1]) + " " + getUnit(+numb_string_format[2]);
-
             return result;
         default :
             return "Введенное число не входит в диапазон 0-999"; 
     }
 }
-console.log(getNumberName(555));
-//console.log(getHundreds(5));*/
-
-/*function switchNumber(numb){
-
+//
+function switchNumber(numb){
     switch(numb){
         case "ноль":
             return 0;
@@ -260,18 +238,14 @@ console.log(getNumberName(555));
         default:
             return 0;
     }
-
 }
-/*
-let numb;
+
 function getNumber(numb){
     let answer;
     if ((!numb)){
         answer = "Данные не были введены либо был введен ноль";
-
         return answer;
-    } 
-
+    }
     let index;
     let result = 0;
     index = numb.indexOf(" ");
@@ -287,27 +261,20 @@ function getNumber(numb){
             // console.log(newNumb);
             result = result + switchNumber(newNumb);
             //console.log(result, 'newNumb');
-
             numb = numb.substr(index + 1);
             // console.log(numb);
             
             result = result + switchNumber(numb);
-
             //console.log(result, 'result');
         }
-
         //return result;
     }else{
-
         result = result + switchNumber(numb);
     }
     
     return result;
-
 }
-console.log(getNumber("семьсот восемьдесят один"));*/
-
-
+//
 function findDistance(x1, x2, y1, y2){
     let answer;
     if ((!x1 && x1 !== 0) || (!x2 && x2 !== 0) || (!y1 && y1 !== 0) || (!y2 && y2 !== 0)){
@@ -347,4 +314,17 @@ console.log(findDistance(8, 7, -2, 0));
 
 
 
+module.exports = {
+    getDayName,
+    findDistance,
+    findSqrt,
+    getNumber,
+    switchNumber,
+    getNumberName,
+    getDecimal2,
+    getHundreds,
+    getUnit,
+    getDecimal,
+    getDayName,
+};
 
