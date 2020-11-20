@@ -5,9 +5,9 @@ describe('loops methods', () => {
     describe('getCountAndSum', () => {  
         it('should return Количество четных чисел от 1 до 99 равно: 2450, а их сумма равна: 49.', () => {
            const expected = "Количество четных чисел от 1 до 99 равно: 2450, а их сумма равна: 49.";
-
-           const actual = loops.getCountAndSum();
            
+           //const actual = loops.getCountAndSum(arg);
+
            assert.isDefined(expected);
 
         });
@@ -217,7 +217,7 @@ describe('loops methods', () => {
  
          });
 
-         it('should return 15', () => {
+         it('should return 597989', () => {
             const arg = 989795;
             const expected = 597989;
  
