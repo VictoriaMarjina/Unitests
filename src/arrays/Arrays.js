@@ -1,26 +1,20 @@
-const collection = [0, 5, -1];
+const collection = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-function serchMinElement(collection) {//1
+function searchMinElement(collection) {
     if(!Array.isArray(collection)) {
         return "аргумент не являеться массивом";
     }
-
     let minElement = collection[0];
     for(let i = 0; i < collection.length; i++) {
         if(minElement > collection[i]) {
             minElement = collection[i];
         }
     }
-
     return minElement;
 }
-console.log(serchMinElement(collection));
+console.log(searchMinElement(collection));
 
-module.exports = {
-    serchMinElement,
-};
-
-function serchMaxElement(collection) {//2
+function saerchMaxElement(collection) {
     if(!Array.isArray(collection)) {
         return "аргумент не являеться массивом";
     }
@@ -30,154 +24,158 @@ function serchMaxElement(collection) {//2
             maxElement = collection[i];
         }
     }
-
     return maxElement;
 }
-console.log(serchMaxElement(collection));
+console.log(saerchMaxElement(collection));
 
-/*function serthMinIndex(colection) {//3
-    if(!Array.isArray(colection)) {
-
+function searchMinIndex(collection) {
+    if(!Array.isArray(collection)) {
         return "аргумент не являеться массивом";
     }
-    let minElement = colection[0];
+    let minElement = collection[0];
     let minIndex = 0;
-    for(let i = 0; i < colection.length; i++) {
-        if(minElement > colection[i]) {
-            minElement = colection[i];
+    for(let i = 0; i < collection.length; i++) {
+        if(minElement > collection[i]) {
+            minElement = collection[i];
             minIndex = i;
         }
     }
-
-    return `индекс минимального элемента ${minIndex}`;
+    return minIndex;
 }
-console.log(serthMinIndex(colection));
+console.log(searchMinIndex(collection));
 
-function serthMaxIndex(colection) {//4
-    if(!Array.isArray(colection)) {
-
+function searchMaxIndex(collection) {
+    if(!Array.isArray(collection)) {
         return "аргумент не являеться массивом";
     }
-    let maxElement = colection[0];
+    let maxElement = collection[0];
     let maxIndex = 0;
-    for(let i = 0; i < colection.length; i++) {
-        if(maxElement < colection[i]) {
-            maxElement = colection[i];
+    for(let i = 0; i < collection.length; i++) {
+        if(maxElement < collection[i]) {
+            maxElement = collection[i];
             maxIndex = i;
         }
     }
-
-    return `индекс максимального элемента ${maxIndex}`;
+    return maxIndex;
 }
-console.log(serthMaxIndex(colection));
+console.log(searchMaxIndex(collection));
 
-function sumOddElement(colection) {//5
-    if(!Array.isArray(colection)) {
-
+function sumOddElement(collection) {
+    if(!Array.isArray(collection)) {
         return "аргумент не являеться массивом";
     }
     
     let sumElement = 0;
-    for(let i = 0; i < colection.length; i++) {
-        if(colection[i] % 2 >0) {
-            sumElement += colection[i];
+    for(let i = 0; i < collection.length; i++) {
+        if(collection[i] % 2 >0) {
+            sumElement += collection[i];
         }
     }
-
-    return `сумма не четных элементов равна ${sumElement}`
+    return sumElement;
 }
-console.log(sumOddElement(colection));
+console.log(sumOddElement(collection));
 
-function reversArray(colection) {//6
-    if(!Array.isArray(colection)) {
+function reversArray(collection) {
+    if(!Array.isArray(collection)) {
         return "аргумент не являеться массивом";
     }
-    let reversColection = "";
-    for(let i = colection.length - 1; i >= 0; i--) {
-        reversColection += (colection[i] + " "); 
+    let reverscollection = "";
+    for(let i = collection.length - 1; i >= 0; i--) {
+        reverscollection += (collection[i] + " "); 
     }
-
-    return ` реверс массива ${reversColection}`;
+    return reverscollection;
 }
-console.log(reversArray(colection));
+console.log(reversArray(collection));
 
-function sumOddIndex(colection) {//7
-    if(!Array.isArray(colection)) {
+function sumOddIndex(collection) {
+    if(!Array.isArray(collection)) {
         return "аргумент не являеться массивом";
     }
     let sumElement = 0;
-    for(let i = 0; i < colection.length; i++) {
+    for(let i = 0; i < collection.length; i++) {
         if(i % 2 > 0) {
-            sumElement += colection[i];
+            sumElement += collection[i];
         }
     }
-
-    return `сумма элементов с нечетным индексом равна ${sumElement}`;
+    return sumElement;
 }
-console.log(sumOddIndex(colection));
+console.log(sumOddIndex(collection));
 
-function reversHalf(colection) {//8
-    if(!Array.isArray(colection)) {
-
+function reversHalf(collection) {
+    if(!Array.isArray(collection)) {
         return "аргумент не являеться массивом";
     }
     let half = "";
-    const halfColection = Math.ceil(colection.length / 2);
-    if(colection.length % 2 === 0) {
-        for(let i = 0; i < colection.length; i++) {
-           if(i < colection.length / 2) {
-               half += colection[i + halfColection] + " ";
+    const halfcollection = Math.ceil(collection.length / 2);
+    if(collection.length % 2 === 0) {
+        for(let i = 0; i < collection.length; i++) {
+           if(i < collection.length / 2) {
+               half += collection[i + halfcollection] + " ";
            } else {
-                half += colection[i - halfColection] + " ";
+                half += collection[i - halfcollection] + " ";
            }
         }
     } else {
-        for(let i = 0; i < colection.length; i++) {
-            if(i < halfColection - 1) {
-                half += colection[i + halfColection] + " ";
-            } else if(i > halfColection - 1) {
-                half += colection[i - halfColection] + " ";
+        for(let i = 0; i < collection.length; i++) {
+            if(i < halfcollection - 1) {
+                half += collection[i + halfcollection] + " ";
+            } else if(i > halfcollection - 1) {
+                half += collection[i - halfcollection] + " ";
             } else {
-                half += colection[i] + " ";
+                half += collection[i] + " ";
             }
         }
     }
-
-    return `смена мест ${half}`;
+    return half;
 }
-console.log(reversHalf(colection));
+console.log(reversHalf(collection));
 
-function sortBubble(colection) {//9 bubble
-    if(!Array.isArray(colection)) {
+function sortBubble(collection) {
+    if(!Array.isArray(collection)) {
         return "аргумент не являеться массивом";
     }
     let temp = 0;
-    for(let i = 0; i < colection.length; i++) {
-        for(let j = i + 1; j < colection.length; j++) {
-            if(colection[i] > colection[j]) {
-                temp = colection[i];
-                colection[i] = colection[j];
-                colection[j] = temp;
+    for(let i = 0; i < collection.length; i++) {
+        for(let j = i + 1; j < collection.length; j++) {
+            if(collection[i] > collection[j]) {
+                temp = collection[i];
+                collection[i] = collection[j];
+                collection[j] = temp;
             }
         }
     }
-    return `отсортированный массив bubble ${colection}`;
+    return collection;
 }
-console.log(sortBubble(colection));
+console.log(sortBubble(collection));
 
-function sortSelect(colection) { //9 select
-    for (let i = 0, l = colection.length, k = l - 1; i < k; i++) {
+function sortSelect(collection) {
+    if(!Array.isArray(collection)) {
+        return "аргумент не являеться массивом";
+    }
+    for (let i = 0, l = collection.length, k = l - 1; i < k; i++) {
         let indexMin = i;
         for (let j = i + 1; j < l; j++) {
-            if (colection[indexMin] > colection[j]) {
+            if (collection[indexMin] > collection[j]) {
                 indexMin = j;
             }
         }
         if (indexMin !== i) {
-            [colection[i], colection[indexMin]] = [colection[indexMin], colection[i]];
+            [collection[i], collection[indexMin]] = [collection[indexMin], collection[i]];
         }
     }
-
-    return `сортированный масив select ${colection}`;
+    return collection;
 }
-console.log(sortSelect(colection));*/
+console.log(sortSelect(collection));
+
+module.exports = {
+    searchMinElement,
+    saerchMaxElement,
+    searchMinIndex,
+    searchMaxIndex,
+    sumOddElement,
+    reversArray,
+    sumOddIndex,
+    reversHalf,
+    sortBubble, 
+    sortSelect
+}
